@@ -338,6 +338,7 @@ proto_lang_toolchain(
 proto_library(
     name = "java_test_protos",
     srcs = glob(["src/test/proto/**/*.proto"]),
+    enable_editions = True,
     strip_import_prefix = "src/test/proto",
     deps = [
         "//:any_proto",
@@ -625,6 +626,8 @@ junit_tests(
             "src/test/java/com/google/protobuf/ProtobufToStringOutputTest.java",
             "src/test/java/com/google/protobuf/FieldPresenceTest.java",
             "src/test/java/com/google/protobuf/UnredactedDebugFormatForTestTest.java",
+            "src/test/java/com/google/protobuf/LargeEnumTest.java",
+            "src/test/java/com/google/protobuf/LargeEnumLiteTest.java",
             # Excluded in core_tests
             "src/test/java/com/google/protobuf/DecodeUtf8Test.java",
             "src/test/java/com/google/protobuf/IsValidUtf8Test.java",
