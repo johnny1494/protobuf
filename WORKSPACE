@@ -234,9 +234,9 @@ http_archive(
     name = "rules_fuzzing",
     patch_args = ["-p1"],
     patches = ["//third_party:rules_fuzzing.patch"],
-    sha256 = "77206c54b71f4dd5335123a6ff2a8ea688eca5378d34b4838114dff71652cf26",
-    strip_prefix = "rules_fuzzing-0.5.1",
-    urls = ["https://github.com/bazelbuild/rules_fuzzing/releases/download/v0.5.1/rules_fuzzing-0.5.1.zip"],
+    sha256 = "284526edf1b5e1f0279d0f8a4b4bf1d872a8efc1",
+    strip_prefix = "rules_fuzzing-0.5.3",
+    urls = ["https://github.com/bazelbuild/rules_fuzzing/releases/download/v0.5.3/rules_fuzzing-0.5.3.zip"],
 )
 
 load("@rules_fuzzing//fuzzing:repositories.bzl", "rules_fuzzing_dependencies")
@@ -295,13 +295,13 @@ crate_repositories()
 http_archive(
     name = "com_google_protobuf_v25",
     integrity = "sha256-e+7ZxRHWMs/3wirACU3Xcg5VAVMDnV2n4Fm8zrSIR0o=",
-    strip_prefix = "protobuf-25.0",
-    url = "https://github.com/protocolbuffers/protobuf/releases/download/v25.0/protobuf-25.0.tar.gz",
     patch_args = ["-p1"],
     patches = [
         # There are other patches, but they are only needed for bzlmod.
         "@com_google_protobuf//:patches/protobuf_v25/0005-Make-rules_ruby-a-dev-only-dependency.patch",
     ],
+    strip_prefix = "protobuf-25.0",
+    url = "https://github.com/protocolbuffers/protobuf/releases/download/v25.0/protobuf-25.0.tar.gz",
 )
 
 # Needed as a dependency of @com_google_protobuf_v25
